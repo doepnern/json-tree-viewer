@@ -49,7 +49,12 @@ export class Tree {
   toString() {
     return this.rootNode.toString();
   }
-  //call after making change to tree with changed node, will propagate the changes to the top of the tree, replacing all changed nodes on the way
+  /*
+    call after making change to tree with changed node, will propagate the changes to the top of the tree,
+     replacing all changed nodes on the way.
+     This prevents the whole tree from being replaced. Only the directly adjacent childen will have their parents mutated which should
+     be fine because it is not relevant for the ui
+  */
   propagateChanges(newLastNode: Node | Leaf, oldNode: Node | Leaf) {
     const newTree = new Tree();
     const path = oldNode.getPath();
@@ -100,6 +105,7 @@ export class Tree {
     childs.forEach((c) => (c.parent = node));
   }
 
+  //replaces last node along a path and updates all children and parents on the path plus the parents of the directly adjacent nodes
   static updateNodesAlongPath(
     currentNodeIndex: number,
     path: (Leaf | Node | BaseNode)[],
