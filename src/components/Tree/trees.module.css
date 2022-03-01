@@ -1,0 +1,41 @@
+.nodeContainer {
+  background-color: rgb(247, 244, 244);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem;
+  position: relative;
+  cursor: pointer;
+  --showDelete: none;
+  /* border: 1px solid rgb(224, 217, 217); */
+}
+
+.nodeContainer:hover {
+  background-color: rgb(211, 221, 231);
+  --showDelete: block;
+}
+
+.leafContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+  position: relative;
+  --showDelete: none;
+}
+
+.leafContainer:hover {
+  --showDelete: block;
+}
+
+.removeButton {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.7rem;
+  color: rgb(204, 77, 77);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: var(--showDelete);
+}
