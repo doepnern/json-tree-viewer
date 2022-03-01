@@ -106,8 +106,6 @@ export class Tree {
     previousNode: Leaf | Node | null,
     newLastNode: Leaf | Node
   ) {
-    console.log({ currentNodeIndex, path, previousNode, newLastNode });
-
     //if last node reached, return
     if (currentNodeIndex === path.length - 1) {
       newLastNode.parent = previousNode;
@@ -150,8 +148,6 @@ export class Tree {
     ];
 
     clone.children = newChildren;
-    console.log("updating children");
-    console.log(clone);
 
     Tree.updateImmediateChildren(clone);
     return clone;
