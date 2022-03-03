@@ -17,7 +17,7 @@ import { BetterTreeActions } from "../TreeActions/BetterTreeActions";
 
 const INSET = 32;
 
-export function BetterTreeRepresentation() {
+export function BetterTree() {
   const { rootNode, nodes } = useBetterTreeCtx();
 
   const rootNodeState = findNodeById(nodes, rootNode);

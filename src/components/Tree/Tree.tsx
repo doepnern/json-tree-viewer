@@ -8,7 +8,7 @@ import { TreeActions } from "../TreeActions/TreeActions";
 
 const INSET = 32;
 
-export function TreeRepresentation() {
+export function Tree() {
   const treeState = useTreeCtx();
   return <NodeRepresentation node={treeState.rootNode} />;
 }

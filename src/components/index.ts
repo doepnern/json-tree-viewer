@@ -1,2 +1,2 @@
-export { TreeRepresentation } from "./Tree/Tree";
-export { BetterTreeRepresentation } from "./Tree/BetterTree";
+export { Tree } from "./Tree/Tree";
+export { BetterTree } from "./BetterTree/BetterTree";
