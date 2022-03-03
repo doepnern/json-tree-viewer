@@ -1,13 +1,13 @@
 import "./App.css";
-import { TreeRepresentation } from "./components";
-import { TreeContextProvider } from "./context/TreeContext";
+import { BetterTreeRepresentation } from "./components";
+import { BetterTreeContextProvider } from "./context/BetterTreeContext";
 
 function App() {
   return (
     <div className="App">
-      <TreeContextProvider>
-        <TreeRepresentation />
-      </TreeContextProvider>
+      <BetterTreeContextProvider>
+        <BetterTreeRepresentation />
+      </BetterTreeContextProvider>
     </div>
   );
 }
