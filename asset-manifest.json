@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/json-tree-viewer/static/css/main.235411db.css",
-    "main.js": "/json-tree-viewer/static/js/main.b5f28fc3.js",
+    "main.js": "/json-tree-viewer/static/js/main.3f51d09e.js",
     "static/media/file-svgrepo-com.svg": "/json-tree-viewer/static/media/file-svgrepo-com.e59a5217e3b641bc3083fb7abb1fedd7.svg",
     "static/media/folder-svgrepo-com.svg": "/json-tree-viewer/static/media/folder-svgrepo-com.bf99b3405e75b63f541558e740c1c2c7.svg",
     "index.html": "/json-tree-viewer/index.html",
     "main.235411db.css.map": "/json-tree-viewer/static/css/main.235411db.css.map",
-    "main.b5f28fc3.js.map": "/json-tree-viewer/static/js/main.b5f28fc3.js.map"
+    "main.3f51d09e.js.map": "/json-tree-viewer/static/js/main.3f51d09e.js.map"
   },
   "entrypoints": [
     "static/css/main.235411db.css",
-    "static/js/main.b5f28fc3.js"
+    "static/js/main.3f51d09e.js"
   ]
 }
