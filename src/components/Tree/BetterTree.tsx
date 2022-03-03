@@ -1,12 +1,13 @@
 import styles from "./trees.module.css";
 import { ReactComponent as FolderIcon } from "../../assets/folder-svgrepo-com.svg";
 import { ReactComponent as FileIcon } from "../../assets/file-svgrepo-com.svg";
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useState } from "react";
 import {
   useBetterTreeCtx,
   useBetterTreeCtxDispatch,
 } from "../../context/BetterTreeContext";
 import {
+  findNodeById,
   Id,
   isNodeState,
   LeafState,
@@ -19,9 +20,7 @@ const INSET = 32;
 export function BetterTreeRepresentation() {
   const { rootNode, nodes } = useBetterTreeCtx();
 
-  const rootNodeState = nodes.find((n) => n.id === rootNode);
-  const rootNodeStateind = nodes.findIndex((n) => n.id === rootNode) as any;
-  console.log(rootNodeState === nodes[rootNodeStateind]);
+  const rootNodeState = findNodeById(nodes, rootNode);
 
   if (!isNodeState(rootNodeState)) throw new Error("Didnt find root node");
   return <NodeWrapper node={rootNodeState} parentId={null} />;
@@ -37,8 +36,16 @@ function NodeWrapper({
 }) {
   const { nodes } = useBetterTreeCtx();
   const children = node.children.map((c) => {
-    const child = nodes.find((e) => e.id === c);
-    if (!child) throw new Error("cant find all children of component");
+    const child = findNodeById(nodes, c);
+    if (!child)
+      throw new Error(
+        "cant find all children of component " +
+          JSON.stringify(node, null, 2) +
+          "\n from nodes \n" +
+          JSON.stringify(nodes, null, 2) +
+          "\n missing: \n" +
+          c
+      );
     return child;
   });
 

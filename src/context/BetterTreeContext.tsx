@@ -12,6 +12,7 @@ const BetterTreeCtxDispatch = createContext<React.Dispatch<ACTIONTYPE> | null>(
 
 const BetterTreeCtx = createContext<null | typeof initialState>(null);
 
+//separate contexts so dispatchContext will never cause
 export function useBetterTreeCtxDispatch(): React.Dispatch<ACTIONTYPE> {
   const ctx = useContext(BetterTreeCtxDispatch);
   if (!ctx) throw new Error("context not found");
